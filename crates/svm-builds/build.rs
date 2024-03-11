@@ -178,14 +178,14 @@ pub static RELEASE_LIST_JSON : &str = {}"{}"{};"#,
 }
 
 fn main() {
-    #[cfg(not(feature = "_offline"))]
-    if std::env::var("DOCS_RS").is_ok() {
-        // no network access allowed during docs rs builds
-        generate_offline();
-    } else {
-        generate();
-    }
+    // #[cfg(not(feature = "_offline"))]
+    // if std::env::var("DOCS_RS").is_ok() {
+    //     // no network access allowed during docs rs builds
+    //     generate_offline();
+    // } else {
+    //     generate();
+    // }
 
-    #[cfg(feature = "_offline")]
+    // #[cfg(feature = "_offline")]
     generate_offline();
 }
